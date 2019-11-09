@@ -3,7 +3,7 @@
 #
 #   for use with Python 3
 
-#	dt_TEMP_CONTROL_MODULES_buffer_033 
+#	utility.py
 #  
 #	This program is free software; you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ from ftplib import FTP
 # None
 
 # Standard or Installed Modules
-#import configparser
+# none
 
 def in_GUI_mode():
 	mode = 1

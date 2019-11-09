@@ -1,0 +1,16 @@
+# ignore all html files
+*.html
+
+# ignore all txt files
+*.txt
+
+# ignore all files in the log directory
+log/
+
+# ignore all files in the old directory
+old/
+
+# ignore all files in the __pycache__ directory
+__pycache__/
+
+

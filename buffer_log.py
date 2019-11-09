@@ -3,7 +3,7 @@
 #
 #   for use with Python 3
 
-#	buffer_log.py october 22nd 2019
+#	buffer_log.py
 #  
 #	This program is free software; you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ from sys import exit as sys_exit
 import socket
 
 # Third party importstemp_log
-#from w1thermsensor import W1ThermSensor
+# none
  
 # Local application imports
 from utility import pr,make_time_text,send_by_ftp

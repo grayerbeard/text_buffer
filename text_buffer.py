@@ -3,7 +3,7 @@
 #
 #   for use with Python 3
 
-#	text_buffer   october 22nd 2019
+#	text_buffer
 #  
 #	This program is free software; you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -102,7 +102,7 @@ class class_text_buffer(object):
 		if self.__log_buffer_flag:
 			self.__log.log_to_file(self.__headings,values)
 			self.__log.copy_log_to_www(False)
-			#send log file to website every ten scans
+			#send log file to website configevery ten scans
 			if self.__send_log_count > 10:
 				#print("Sending log file by FTP")
 				self.__log.send_log_by_ftp(False,self.__config.log_directory,self.__config.ftp_timeout)
@@ -144,7 +144,9 @@ class class_text_buffer(object):
 		here = "buffer.pr for " + self.__name
 		make_values = [" -- "]*self.__width
 		prtime = datetime.now()
-		for_screen = log_time.strftime('%d/%m/%Y %H:%M:%S.%f')         
+		for_screen = log_time.strftime('%d/%m/%Y %H:%M:%S')
+		# following alternative will show more resolution for fractions of a second
+		# for_screen = log_time.strftime('%d/%m/%Y %H:%M:%S.%f')      
 		make_values[0] = for_screen
 		file_start = """<head>
 <meta http-equiv="refresh" content="""
@@ -174,7 +176,12 @@ class class_text_buffer(object):
 			sys_exit()
 				
 		# print to screen and to status log and update html file
-		print(self.__name + " : " + for_screen)
+		
+		if appnd:
+			print("    appending : " + self.__name + " : " + for_screen)
+		else:
+			print("not appending : " + self.__name + " : " + for_screen)
+
 		self.update_buffer(make_values,appnd,ref)
 		with open(self.__html_filename,'w') as htmlfile:
 			htmlfile.write(file_start)
@@ -195,11 +202,9 @@ class class_text_buffer(object):
 		
 		# To debug FTP change end of following line to " = True"
 		FTP_dbug_flag = False
-		#print("just before FTP line 194")
 		ftp_result = send_by_ftp(FTP_dbug_flag,self.__ftp_creds, self.__html_filename_save_as, self.__html_filename,"",self.__config.ftp_timeout)
 		for pres_ind in range(0,len(ftp_result)):
 			pr(FTP_dbug_flag,here, str(pres_ind) + " : ", ftp_result[pres_ind])
-		#print("just after FTP line 198")
 		return
 
 

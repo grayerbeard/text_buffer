@@ -15,6 +15,7 @@ The class in the file **text_buffer.py** is used to generate an HTML file to per
 The data shown is held in a rotating buffer so that only recent data is shown.
 The HTML file is saved to the code directory and is also (optionally) copied to the local web server directory and (optionally) by FTP to a rempote web site by so the data can be viewed from anywhere with an internet connection.  The logging functions are in the class in the file **log_buffer.py**.  Various utility functions including FTP are in the **utility.py".
   
-An earlier version of the code is in near continuos use and shown at [R Pi 4 Blog](https://www.smalle.uk/r-pi-4-blog)
+The web location that is currently used for logging is shown at [test_text_buffer_log.html](https://www.ftp4rpi.smalle.uk/house/test_text_buffer_log.html)
+An earlier version of the code is in near continuos use and shown at [R Pi 4 Blog](https://www.smalle.uk/r-pi-4-blog) controlling an R Pi Cooling fan and logging data from the R Pi 4. Control uses PWM Fan Speed Control.
 
 The further code to do the R Pi PWM Fan control will be published on this account in due course.

@@ -87,6 +87,14 @@ while (config.scan_count <= config.max_scans) or (config.max_scans == 0):
 		except KeyboardInterrupt:
 			print("........Ctrl+C pressed...")
 			sys_exit()
+		except ValueError:
+			print("sleep_Time Error value is: ",sleep_time, "loop_time: ",
+			      loop_time,"correction/1000 : ",correction/1000)
+			print("Will do sleep using config.scan_delay")
+			time_sleep(config.scan_delay)
+		except Exception:
+			print("some other error with time_sleep try with config.scan_delay)
+			time_sleep(config.scan_delay)      
 		last_end = end_time
 		end_time = datetime.now()
 		last_total = (end_time - last_end).total_seconds()

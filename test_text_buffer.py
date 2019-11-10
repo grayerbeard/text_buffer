@@ -93,7 +93,7 @@ while (config.scan_count <= config.max_scans) or (config.max_scans == 0):
 			print("Will do sleep using config.scan_delay")
 			time_sleep(config.scan_delay)
 		except Exception:
-			print("some other error with time_sleep try with config.scan_delay)
+			print("some other error with time_sleep try with config.scan_delay")
 			time_sleep(config.scan_delay)      
 		last_end = end_time
 		end_time = datetime.now()

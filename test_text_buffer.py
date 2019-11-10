@@ -82,6 +82,10 @@ while (config.scan_count <= config.max_scans) or (config.max_scans == 0):
 		# Adjust the sleep time to aceive the target loop time and apply
 		# with a slow acting correction added in to gradually improve accuracy
 		sleep_time = config.scan_delay - loop_time - (correction/1000)
+		if sleep_time < 0:
+			sleep_time = 0
+			print("program taking longer than config_scan_delay")
+			print("Delay of only " + config.scan_delay + " is too fast for accurate loop time adjustment")
 		try:
 			time_sleep(sleep_time)
 		except KeyboardInterrupt:

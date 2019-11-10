@@ -85,7 +85,7 @@ while (config.scan_count <= config.max_scans) or (config.max_scans == 0):
 		if sleep_time < 0:
 			sleep_time = 0
 			print("program taking longer than config_scan_delay")
-			print("Delay of only " + config.scan_delay + " is too fast for accurate loop time adjustment")
+			print("Delay of only " + str(config.scan_delay) + " is too fast for accurate loop time adjustment")
 		try:
 			time_sleep(sleep_time)
 		except KeyboardInterrupt:

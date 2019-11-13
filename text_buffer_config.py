@@ -44,7 +44,7 @@ from utility import pr,make_time_text,send_by_ftp
 
 class class_config:
 	def __init__(self,ftp_creds_filename,local_dir_www,log_directory,ftp_log_max_count,ftp_timeout):
-		self.__c_filename = "" # must be set
+		#self.__c_filename = "" # must be set
 		self.scan_delay = 10		# delay in seconds between each scan (not incl sensor responce times)
 		self.max_scans = 0			# number of scans to do, set to zero to scan for ever (until type "ctrl C")
 									# by setting this to 3 ensures program stops after few scans id a new config file was made.
@@ -76,16 +76,13 @@ class class_config:
 		
 		print("self.ftp_creds_filename : ",self.ftp_creds_filename)
 
-
-
-
-	def set_filename(self,c_filename):
-		self.__c_filename =  c_filename
+	#def set_filename(self,c_filename):
+	#	self.__c_filename =  c_filename
 
 	def read_file(self):
 		here = "config.read_file"
 		config_read = RawConfigParser()
-		config_read.read(self.__c_filename)
+		config_read.read(self.config_filename)
 		self.scan_delay = float(config_read.getint('SetUp', 'scan_delay')) 
 		self.max_scans = int(config_read.getint('SetUp', 'max_scans'))
 		self.log_directory = config_read.get('SetUp', 'log_directory')
@@ -108,8 +105,8 @@ class class_config:
 
 		config_write.set('SetUp', 'ftp_timeout',self.ftp_timeout)
 		# Writing our configuration file to 'c_filename'
-		pr(self.dbug, here, "ready to write new config file withdefault values: " , self.__c_filename)
-		with open(self.__c_filename, 'w+') as configfile:
+		pr(self.dbug, here, "ready to write new config file withdefault values: " , self.config_filename)
+		with open(self.config_filename, 'w+') as configfile:
 			config_write.write(configfile)
 		return 0
 

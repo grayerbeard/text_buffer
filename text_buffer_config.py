@@ -26,6 +26,7 @@
 from configparser import RawConfigParser
 from csv import DictReader as csv_DictReader
 from csv import DictWriter as csv_DictWriter
+from os import path
 #from datetime import datetime
 #from shutil import copyfile
 #from ftplib import FTP

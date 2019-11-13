@@ -50,9 +50,9 @@ class class_text_buffer(object):
 		self.__dta = [ [ None for di in range(self.__width+1) ] for dj in range(self.__size_max+1) ]
 		self.__size = 0
 		self.__posn = self.__size_max-1
-		self.__html_filename = "not set"
-		self.__www_filename = "not set"
-		self.__ftp_creds = "not set"
+		# self.__html_filename = "not set"
+		# self.__www_filename = "not set"
+		# self.__ftp_creds = "not set"
 		self.__headings = ["Time"]
 		for hdg_ind in range(0,self.__width-1):
 			#print(hdg_ind,headings[hdg_ind])

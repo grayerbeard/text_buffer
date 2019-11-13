@@ -21,23 +21,23 @@ from text_buffer_config import class_config
 from text_buffer import class_text_buffer
 from utility import fileexists,pr,make_time_text
 
-config = class_config()
-print("  ##############22222222222222222############### config.ftp_creds_filename : ",config.ftp_creds_filename)
-my_pid = getpid()
-config.prog_path = path.dirname(path.realpath(__file__)) + "/"
-config.prog_name = str(sys_argv[0][:-3])
+config = class_config("/home/pi/ftp_creds/ftp_creds.csv","/var/www/html/","log/",5,10)
 
-print(config.prog_name)
-
-config.config_filename = config.prog_name + ".cfg"
-config.set_filename(config.config_filename)
-
-print("config file is : ",config.config_filename)
+################################
+#print("config.ftp_creds_filename : ",config.ftp_creds_filename)
+#my_pid = getpid()
+#config.prog_path = path.dirname(path.realpath(__file__)) + "/"
+#config.prog_name = str(sys_argv[0][:-3])
+#print(config.prog_name)
+#config.config_filename = config.prog_name + ".cfg"
+#config.set_filename(config.config_filename)
+#print("config file is : ",config.config_filename)
+###############################################
 
 if fileexists(config.config_filename):		
 	print( "will try to read Config File : " ,config.config_filename)
 	config.read_file() # overwrites from file
-else : # no file so my_sensorneeds to be written
+else : # no file so needs to be written
 	config.write_file()
 	print("New Config file made")
 

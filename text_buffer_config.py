@@ -41,24 +41,25 @@ from utility import pr,make_time_text,send_by_ftp
 
 
 class class_config:
-	def __init__(self):
+	def __init__(self,ftp_creds_filename,local_dir_www,log_directory,ftp_log_max_count,ftp_timeout):
 		self.__c_filename = "" # must be set
 		self.scan_delay = 10		# delay in seconds between each scan (not incl sensor responce times)
 		self.max_scans = 0			# number of scans to do, set to zero to scan for ever (until type "ctrl C")
 									# by setting this to 3 ensures program stops after few scans id a new config file was made.
-		self.log_directory = "log/"		# where to send log files both temp control and processor temp logging
-		self.local_dir_www = "/var/www/html/" # default value for local folder
-		self.ftp_creds_filename = "/home/pi/ftp_creds/ftp_creds.csv"	# 
-		print("   11111111111    ",self.ftp_creds_filename)
-		self.ftp_log_max_count = 5  # max scans before sending data to log file
+		self.log_directory = log_directory		# where to send log files both temp control and processor temp logging
+		self.local_dir_www = local_dir_www # default value for local folder
+		self.ftp_creds_filename = ftp_creds_filename	# 
+		self.ftp_log_max_count = ftp_log_max_count  # max scans before sending data to log file
 		self.ftplog = 0		# Number of Value Changes before Log File is Saved to remote website, 0 means every change
-		self.ftp_timeout = 10
+		self.ftp_timeout = ftp_timeout
 
-		
 		# These parameters are not saved to the config file
 		# First three use the program pathname
-		self.prog_path = ""
-		self.config_filename = ""
+		#self.prog_path = ""
+		self.prog_path = path.dirname(path.realpath(__file__)) + "/"
+		self.prog_name = str(sys_argv[0][:-3])
+		#self.config_filename = ""
+		self.config_filename = config.prog_name + ".cfg"
 		#  was self.sensor_info_filename = ""  august 9th 2018
 		self.log_on = False
 		self.log_outfile = ""
@@ -70,6 +71,11 @@ class class_config:
 		self.dbug_ftp = False
 		self.exit_flag = False
 		self.new_config_wanted = False
+		
+		print("config.ftp_creds_filename : ",config.ftp_creds_filename)
+
+
+
 
 	def set_filename(self,c_filename):
 		self.__c_filename =  c_filename

@@ -6,8 +6,8 @@
 #from subprocess import call as subprocess_call
 from time import sleep as time_sleep
 from os import getpid
-from os import path
-from sys import argv as sys_argv
+#from os import path
+#from sys import argv as sys_argv
 from sys import exit as sys_exit
 from datetime import datetime
 from random import randint as random_randint
@@ -44,7 +44,7 @@ else : # no file so needs to be written
 config.scan_count = 0
 
 example_buffer_width = 11
-headings = ["Count","Val1","Val2","Val33","Val4","Val5"]
+headings = ["Count","Val1","Val2","Val3","Val4","Val5"]
 buffer_flag = True
 example_buffer = class_text_buffer(100,headings,config.prog_name,config,buffer_flag)
 

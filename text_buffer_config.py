@@ -61,7 +61,7 @@ class class_config:
 		self.prog_path = path.dirname(path.realpath(__file__)) + "/"
 		self.prog_name = str(sys_argv[0][:-3])
 		#self.config_filename = ""
-		self.config_filename = config.prog_name + ".cfg"
+		self.config_filename = self.prog_name + ".cfg"
 		#  was self.sensor_info_filename = ""  august 9th 2018
 		self.log_on = False
 		self.log_outfile = ""
@@ -74,7 +74,7 @@ class class_config:
 		self.exit_flag = False
 		self.new_config_wanted = False
 		
-		print("config.ftp_creds_filename : ",config.ftp_creds_filename)
+		print("self.ftp_creds_filename : ",self.ftp_creds_filename)
 
 
 

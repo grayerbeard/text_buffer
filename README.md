@@ -10,7 +10,7 @@ So here it is a **logging facility** for a Python 3 program that is running cont
 The virtical size of the buffer is set in the config,cfg file. If the size is set to (say) ten then the buffer can only outpiut the last ten sets of data.  However the size of the buffer can be far larger  e.g. 100.
 The "horizontal" size of the buffer is set from the number of headings entered when the class is set up (plus an extra column for the time/date stamp).
 
-## A Set of Classes (Would that be called a school of Classes or maybe a College=)
+## A Set of Classes (Would that be called a school of Classes or maybe a College?)
 This set of classes has been used with several Python scripts for:
   * Control and monitoring using an RPI 3 to control the heating of a community workshop.   Two heaters were controlled via Smartplugs and five temperatures were monitored in the room and outside air.
   * Control and monitor a Sauna Heater.

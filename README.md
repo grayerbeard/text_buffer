@@ -6,7 +6,9 @@ For latest version please go to the [R_Pi_4_Fanshim_PWM](https://github.com/gray
 ## Concept of a Circular Buffer
 The concept of the buffer is explained very well here [Wikipedia : Circular buffer](https://en.wikipedia.org/wiki/Circular_buffer)
 
-So here it is a **logging facility** for a Python 3 program that is running continuously to control and or monitor a process on a long term basis.  Data is writtem into buffer rows with a pointer advanced by one every time new data is written.  By careful use of indexex pointers the data can then be read out so that the latest item is at the top and the oldest at the bottom even though the last data might have been put in half way down the list of data.
+So here it is a **logging facility** for a Python 3 program that is running continuously to control and or monitor a process on a long term basis.  Data is writtem into buffer rows with a pointer advanced by one every time new data is written.  By careful use of indexes pointers the data can then be read out so that the latest item is at the top and the oldest at the bottom even though the last data might have been put in half way down the list of data.   
+The virtical size of the buffer is set in the config,cfg file. If the size is set to (say) ten then the buffer can only outpiut the last ten sets of data.  However the size of the buffer can be far larger  e.g. 100.
+The "horizontal" size of the buffer is set from the number of headings entered when the class is set up (plus an extra column for the time/date stamp).
 
 ## A Set of Classes (Would that be called a school of Classes or maybe a College=)
 This set of classes has been used with several Python scripts for:

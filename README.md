@@ -1,5 +1,8 @@
 # **Circular Buffer** for logging and display of recent data.
 
+#Note 
+For latest version please go to the [R_Pi_4_Fanshim_PWM](https://github.com/grayerbeard/R_Pi_4_Fanshim_PWM) repository.
+
 The concept of the buffer is explained very well here [Wikipedia : Circular buffer](https://en.wikipedia.org/wiki/Circular_buffer)
 
 This is a **logging facility** for a Python 3 program that is running continuously to control and or monitor a process on a long term basis.
